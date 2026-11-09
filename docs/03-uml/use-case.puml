@@ -1,8 +1,19 @@
 @startuml
 left to right direction
-actor "Користувач" as User
-rectangle "Система" {
-  usecase "Авторизуватися" as UC1
+actor "Гість" as Guest
+actor "Адміністратор" as Admin
+
+rectangle "ІС Готель" {
+  usecase "Пошук номерів" as UC1
+  usecase "Бронювання номера" as UC2
+  usecase "Оплата проживання" as UC3
+  usecase "Реєстрація заїзду (Check-in)" as UC4
+  usecase "Управління номерами" as UC5
 }
-User --> UC1
+
+Guest --> UC1
+Guest --> UC2
+Guest --> UC3
+Admin --> UC4
+Admin --> UC5
 @enduml
