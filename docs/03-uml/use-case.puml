@@ -1,0 +1,8 @@
+@startuml
+left to right direction
+actor "Користувач" as User
+rectangle "Система" {
+  usecase "Авторизуватися" as UC1
+}
+User --> UC1
+@enduml
