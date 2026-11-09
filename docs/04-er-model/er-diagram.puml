@@ -1,19 +1,39 @@
 @startuml
-entity "User" {
-  * id : number
+entity "Guest" {
+  * id : int
   --
-  name : string
+  full_name : string
   email : string
-}
-entity "Reader" {
-  * id : number
-  --
-  email : string
+  phone : string
 }
 
-entity "Loan" {
-  * id : number
+entity "Room" {
+  * id : int
   --
-  due_date : date
+  room_number : string
+  category : string
+  price_per_night : decimal
+  status : string
 }
-@startuml
+
+entity "Booking" {
+  * id : int
+  --
+  check_in_date : date
+  check_out_date : date
+  total_price : decimal
+  status : string
+}
+
+entity "Payment" {
+  * id : int
+  --
+  amount : decimal
+  payment_date : datetime
+  payment_method : string
+}
+
+Guest ||--o{ Booking
+Room ||--o{ Booking
+Booking ||--|| Payment
+@enduml
