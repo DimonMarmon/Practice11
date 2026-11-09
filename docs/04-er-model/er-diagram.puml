@@ -5,4 +5,15 @@ entity "User" {
   name : string
   email : string
 }
+entity "Reader" {
+  * id : number
+  --
+  email : string
+}
+
+entity "Loan" {
+  * id : number
+  --
+  due_date : date
+}
 @startuml
